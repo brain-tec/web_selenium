@@ -24,6 +24,17 @@
         </t>
     </t>
     
+    <t t-extend="KanbanView.buttons">
+        <t t-jquery="button.oe_kanban_button_new">
+            this.attr('t-att-data-bt-testing-model_name', 'widget.getParent().getParent().view and widget.getParent().getParent().view.fields_view.model');
+            this.attr('t-att-data-bt-testing-name', 'widget.getParent().getParent().view and widget.getParent().getParent().name');
+            this.attr('data-bt-testing-button', 'oe_kanban_button_new');
+            this.attr('t-att-data-bt-testing-submodel_name', 'widget.model');
+        </t>
+    </t>
+
+
+
     <!-- tested: ok -->
     <t t-extend="ListView.buttons">
         <t t-jquery="button.oe_list_add">
@@ -100,7 +111,7 @@
 
     <t t-extend="web.datepicker">
         <t t-jquery="t:first" t-operation="before">
-            <t t-set="bt_testing_model_name" t-value="widget.getParent().dataset and widget.getParent().getParent().dataset.model"/>
+            <t t-set="bt_testing_model_name" t-value="widget.getParent().getParent().dataset and widget.getParent().getParent().dataset.model"/>
         </t>
         <t t-jquery="input.oe_datepicker_master">
             this.attr('t-att-data-bt-testing-name', 'widget.name');
