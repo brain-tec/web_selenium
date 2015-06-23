@@ -119,17 +119,18 @@
         </t>
     </t>
 
-    <t t-extend="FieldSelection">
-        <t t-jquery="t:first" t-operation="before">
-            <t t-set="bt_testing_model_name" t-value="widget.getParent().dataset and widget.getParent().dataset.model"/>
-        </t>
-        <t t-jquery="span.oe_form_field_selection select">
+    <t t-extend="FieldSelectionSelect">
+        <t t-jquery="select">
             this.attr('t-att-data-bt-testing-name', 'widget.name');
-            this.attr('t-att-data-bt-testing-model_name', 'bt_testing_model_name');
+            this.attr('t-att-data-bt-testing-model_name', 'widget.getParent().dataset and widget.getParent().dataset.model');
         </t>
 
-        <t t-jquery="span.oe_form_field_selection select option">
-            this.attr('t-att-data-bt-testing-value', 'option[0]');
+        <t t-jquery="select option">
+	    this.attr('t-att-data-type', 'widget.field.type');
+	    <!-- When the field is selection take the tecnical value to be language independend. 
+		 If it is a many2one field, take the name of the field instead of the id. It's better to be database independend than language independend
+	    -->
+            this.attr('t-att-data-bt-testing-value', "widget.field.type === 'many2one' ? option[1] : option[0]");
         </t>
     </t>
 
