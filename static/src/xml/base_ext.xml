@@ -18,16 +18,16 @@
     <!-- tested: ok -->
     <t t-extend="One2Many.viewmanager">
         <t t-jquery="div.oe_view_manager">
-            this.attr('t-att-data-bt-testing-model_name', 'widget.getParent and widget.getParent().view and widget.getParent().view.fields_view.model');
-            this.attr('t-att-data-bt-testing-name', 'widget.getParent and widget.getParent().name');
+            this.attr('t-att-data-bt-testing-model_name', 'widget and widget.getParent and widget.getParent().view and widget.getParent().view.fields_view.model');
+            this.attr('t-att-data-bt-testing-name', 'widget and widget.getParent and widget.getParent().name');
             this.attr('t-att-data-bt-testing-submodel_name', 'widget.model');
         </t>
     </t>
     
     <t t-extend="KanbanView.buttons">
         <t t-jquery="button.oe_kanban_button_new">
-            this.attr('t-att-data-bt-testing-model_name', 'widget.getParent and widget.getParent().parent and widget.getParent().getParent().view and widget.getParent().getParent().view.fields_view.model');
-            this.attr('t-att-data-bt-testing-name', 'widget.getParent and widget.getParent().parent and widget.getParent().getParent().view and widget.getParent().getParent().name');
+            this.attr('t-att-data-bt-testing-model_name', 'widget and widget.getParent and widget.getParent().parent and widget.getParent().getParent().view and widget.getParent().getParent().view.fields_view.model');
+            this.attr('t-att-data-bt-testing-name', 'widget and widget.getParent and widget.getParent().parent and widget.getParent().getParent().view and widget.getParent().getParent().name');
             this.attr('data-bt-testing-button', 'oe_kanban_button_new');
             this.attr('t-att-data-bt-testing-submodel_name', 'widget.model');
         </t>
@@ -38,8 +38,8 @@
     <!-- tested: ok -->
     <t t-extend="ListView.buttons">
         <t t-jquery="button.oe_list_add">
-            this.attr('t-att-data-bt-testing-model_name', 'widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model');
-            this.attr('data-bt-testing-name', 'oe_form_button_create');
+            this.attr('t-att-data-bt-testing-model_name', 'widget and widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model');
+            this.attr('data-bt-testing-name', 'oe_list_add');
         </t>
     </t>
 
@@ -47,30 +47,19 @@
     <!-- tested: ok -->
     <t t-extend="FormView.buttons">
         <t t-jquery="button.oe_form_button_edit">
-            this.attr('t-att-data-bt-testing-model_name', 'widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model');
+            this.attr('t-att-data-bt-testing-model_name', 'widget and widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model');
 	    this.attr('data-bt-testing-name', 'oe_form_button_edit');
-	</t>
-    </t>
-
-    <!-- tested: ok -->
-    <t t-extend="FormView.buttons">
+        </t>
         <t t-jquery="button.oe_form_button_create">
-            this.attr('t-att-data-bt-testing-model_name', 'widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model');
+            this.attr('t-att-data-bt-testing-model_name', 'widget and widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model');
             this.attr('data-bt-testing-name', 'oe_form_button_create');
         </t>
-    </t>
-
-    <!-- tested: ok -->
-    <t t-extend="FormView.buttons">
         <t t-jquery="button.oe_form_button_save">
-            this.attr('t-att-data-bt-testing-model_name', 'widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model');
+            this.attr('t-att-data-bt-testing-model_name', 'widget and widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model');
             this.attr('data-bt-testing-name', 'oe_form_button_save');
         </t>
-    </t>
-
-    <t t-extend="FormView.buttons">
         <t t-jquery="a.oe_form_button_cancel">
-            this.attr('t-att-data-bt-testing-model_name', 'widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model');
+            this.attr('t-att-data-bt-testing-model_name', 'widget and widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model');
             this.attr('data-bt-testing-name', 'oe_form_button_cancel');
         </t>
     </t>
@@ -85,7 +74,7 @@
     <!-- tested: ok -->
     <t t-extend="FieldChar">
         <t t-jquery="t:first" t-operation="before">
-            <t t-set="bt_testing_model_name" t-value="widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model"/>
+            <t t-set="bt_testing_model_name" t-value="widget and widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model"/>
         </t>
         <t t-jquery="input">
             this.attr('t-att-data-bt-testing-name', 'widget.name');
@@ -96,7 +85,7 @@
     <!-- tested: ok -->
     <t t-extend="FieldEmail">
         <t t-jquery="t:first" t-operation="before">
-            <t t-set="bt_testing_model_name" t-value="widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model"/>
+            <t t-set="bt_testing_model_name" t-value="widget and widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model"/>
         </t>
         <t t-jquery="input">
             this.attr('t-att-data-bt-testing-name', 'widget.name');
@@ -107,7 +96,7 @@
     <!-- tested: ok -->
     <t t-extend="FieldText">
         <t t-jquery="t:first" t-operation="before">
-            <t t-set="bt_testing_model_name" t-value="widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model"/>
+            <t t-set="bt_testing_model_name" t-value="widget and widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model"/>
         </t>
         <t t-jquery="textarea">
             this.attr('t-att-data-bt-testing-name', 'widget.name');
@@ -117,7 +106,7 @@
 
     <t t-extend="web.datepicker">
         <t t-jquery="t:first" t-operation="before">
-            <t t-set="bt_testing_model_name" t-value="widget.getParent and widget.getParent().getParent and widget.getParent().getParent().dataset and widget.getParent().getParent().dataset.model"/>
+            <t t-set="bt_testing_model_name" t-value="widget and widget.getParent and widget.getParent().getParent and widget.getParent().getParent().dataset and widget.getParent().getParent().dataset.model"/>
         </t>
         <t t-jquery="input.oe_datepicker_master">
             this.attr('t-att-data-bt-testing-name', 'widget.name');
@@ -128,7 +117,7 @@
     <t t-extend="FieldSelectionSelect">
         <t t-jquery="select">
             this.attr('t-att-data-bt-testing-name', 'widget.name');
-            this.attr('t-att-data-bt-testing-model_name', 'widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model');
+            this.attr('t-att-data-bt-testing-model_name', 'widget and widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model');
         </t>
 
         <t t-jquery="select option">
@@ -142,7 +131,7 @@
 
     <t t-extend="FieldMany2One">
         <t t-jquery="t:first" t-operation="before">
-            <t t-set="bt_testing_model_name" t-value="widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model"/>
+            <t t-set="bt_testing_model_name" t-value="widget and widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model"/>
         </t>
         <t t-jquery="span.oe_form_field_many2one input[type='text']">
             this.attr('t-att-data-bt-testing-name', 'widget.name');
@@ -152,7 +141,7 @@
 
     <t t-extend="FieldMany2ManyTags">
         <t t-jquery="t:first" t-operation="before">
-            <t t-set="bt_testing_model_name" t-value="widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model"/>
+            <t t-set="bt_testing_model_name" t-value="widget and widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model"/>
         </t>
         <t t-jquery="div.oe_tags">
             this.attr('t-att-data-bt-testing-name', 'widget.name');
@@ -163,13 +152,13 @@
     <t t-extend="FieldBoolean">
         <t t-jquery="span.oe_form_field_boolean input[type='checkbox']">
             this.attr('t-att-data-bt-testing-name', 'widget.name');
-            this.attr('t-att-data-bt-testing-model_name', 'widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model');
+            this.attr('t-att-data-bt-testing-model_name', 'widget and widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model');
         </t>
     </t>
 
     <t t-extend="FieldBinaryFile">
         <t t-jquery="t:first" t-operation="before">
-            <t t-set="bt_testing_model_name" t-value="widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model"/>
+            <t t-set="bt_testing_model_name" t-value="widget and widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model"/>
         </t>
         <t t-jquery="input.field_binary">
             this.attr('t-att-data-bt-testing-name', 'widget.name');
@@ -179,46 +168,46 @@
 
     <t t-extend="WidgetButton">
         <t t-jquery="button">
-            this.attr('t-att-data-bt-testing-model_name', 'widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model');
+            this.attr('t-att-data-bt-testing-model_name', 'widget and widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model');
             this.attr('t-att-data-bt-testing-name', 'widget.node.attrs.name');
         </t>
     </t>
 
     <t t-extend="SelectCreatePopup.search.buttons">
         <t t-jquery="button.oe_selectcreatepopup-search-select">
-            this.attr('t-att-data-bt-testing-model_name', 'widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model');
+            this.attr('t-att-data-bt-testing-model_name', 'widget and widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model');
             this.attr('data-bt-testing-name', 'oe_form_button_select');
         </t>
 
         <t t-jquery="button.oe_selectcreatepopup-search-create">
-            this.attr('t-att-data-bt-testing-model_name', 'widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model');
+            this.attr('t-att-data-bt-testing-model_name', 'widget and widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model');
             this.attr('data-bt-testing-name', 'oe_form_button_create');
         </t>
 
         <t t-jquery="a.oe_form_button_cancel">
-            this.attr('t-att-data-bt-testing-model_name', 'widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model');
+            this.attr('t-att-data-bt-testing-model_name', 'widget and widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model');
             this.attr('data-bt-testing-name', 'oe_form_button_cancel');
         </t>
     </t>
 
     <t t-extend="AbstractFormPopup.buttons">
         <t t-jquery="button.oe_abstractformpopup-form-save">
-            this.attr('t-att-data-bt-testing-model_name', 'widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model');
+            this.attr('t-att-data-bt-testing-model_name', widget and 'widget and widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model');
             this.attr('data-bt-testing-name', 'oe_form_button_save');
         </t>
 
         <t t-jquery="button.oe_abstractformpopup-form-save">
-            this.attr('t-att-data-bt-testing-model_name', 'widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model');
+            this.attr('t-att-data-bt-testing-model_name', 'widget and widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model');
             this.attr('data-bt-testing-name', 'oe_form_button_save_and_close');
         </t>
 
         <t t-jquery="button.oe_abstractformpopup-form-save-new">
-            this.attr('t-att-data-bt-testing-model_name', 'widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model');
+            this.attr('t-att-data-bt-testing-model_name', 'widget and widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model');
             this.attr('data-bt-testing-name', 'oe_form_button_save_new');
         </t>
 
         <t t-jquery="a.oe_form_button_cancel">
-            this.attr('t-att-data-bt-testing-model_name', 'widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model');
+            this.attr('t-att-data-bt-testing-model_name', 'widget and widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model');
             this.attr('data-bt-testing-name', 'oe_form_button_cancel');
         </t>
     </t>
@@ -228,5 +217,12 @@
             this.attr('t-att-data-bt-testing-model_name', 'view.dataset and view.dataset.model');
 	</t>
     </table>
+
+    <t t-extend="Sidebar">
+	<t t-jquery="a.oe_sidebar_action_a">
+		this.attr('t-att-data-bt-type', 'item.action and item.action.type');
+		this.attr('t-att-data-bt-id', 'item.action and item.action.id');
+	</t>
+    </t>
 
 </templates>
