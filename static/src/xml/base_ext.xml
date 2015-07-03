@@ -192,22 +192,18 @@
 
     <t t-extend="AbstractFormPopup.buttons">
         <t t-jquery="button.oe_abstractformpopup-form-save">
-            this.attr('t-att-data-bt-testing-model_name', 'widget and widget and widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model');
             this.attr('data-bt-testing-name', 'oe_form_button_save');
         </t>
 
         <t t-jquery="button.oe_abstractformpopup-form-save">
-            this.attr('t-att-data-bt-testing-model_name', 'widget and widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model');
             this.attr('data-bt-testing-name', 'oe_form_button_save_and_close');
         </t>
 
         <t t-jquery="button.oe_abstractformpopup-form-save-new">
-            this.attr('t-att-data-bt-testing-model_name', 'widget and widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model');
             this.attr('data-bt-testing-name', 'oe_form_button_save_new');
         </t>
 
         <t t-jquery="a.oe_form_button_cancel">
-            this.attr('t-att-data-bt-testing-model_name', 'widget and widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model');
             this.attr('data-bt-testing-name', 'oe_form_button_cancel');
         </t>
     </t>
