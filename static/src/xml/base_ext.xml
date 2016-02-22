@@ -140,7 +140,6 @@
     <!-- adapted, but not tested: 9.0 EE -->
     <t t-extend="FieldSelectionSelect">
         <t t-jquery="select">
-            this.attr('data-BATOMO', 'TEST');
             this.attr('t-att-data-bt-testing-name', 'widget.name');
             this.attr('t-att-data-bt-testing-model_name', 'widget.view.fields_view.model');
         </t>
@@ -186,8 +185,19 @@
         </t>
     </t>
 
-    <!-- adapted, but not tested: 9.0 EE
-    <t t-extend="FieldRadioFile">
+    <!-- adapted, but not tested: 9.0 EE -->
+    <t t-extend="X2ManyControlPanel">
+	    <t t-jquery="div.o_x2m_control_panel">
+            this.attr('t-att-data-bt-testing-model_name', 'widget.__parentedParent.view.model');
+            this.attr('t-att-data-bt-testing-name', 'widget.__parentedParent.dataset.child_name');
+            this.attr('t-att-data-bt-testing-submodel_name', 'widget.__parentedParent.dataset.model');
+        </t>
+    </t>
+
+
+
+    <!-- adapted, but not tested: 9.0 EE -->
+    <t t-extend="FieldRadio">
         <t t-jquery="input.o_form_radio">
             this.attr('t-att-data-bt-testing-name', 'widget.name');
             this.attr('t-att-data-bt-testing-model_name', 'widget.view.fields_view.model');
