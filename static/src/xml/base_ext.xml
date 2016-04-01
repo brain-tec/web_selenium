@@ -114,6 +114,13 @@
         </t>
     </t>
 
+	<t t-extend="FieldSelection">
+        <t t-jquery="select">
+            this.attr('t-att-data-bt-testing-name', 'widget.name');
+            this.attr('t-att-data-bt-testing-model_name', 'widget and widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model');
+        </t>
+    </t>
+
     <t t-extend="FieldSelectionSelect">
         <t t-jquery="select">
             this.attr('t-att-data-bt-testing-name', 'widget.name');
