@@ -253,11 +253,18 @@
 	</t>
     </table>
 
-    <t t-extend="Sidebar">
+	<t t-extend="Sidebar">
+    	<t t-jquery="div.o_dropdown">
+		    this.attr('t-att-data-bt-type', 'name');
+		    this.attr('t-att-data-bt-id', 'widget.id');
+	    </t>
+    </t>
+
+    <!--<t t-extend="Sidebar">
     	<t t-jquery="a">
 		    this.attr('t-att-data-bt-type', 'item and item.action and item.action.type');
 		    this.attr('t-att-data-bt-id', 'item and item.action and item.action.id');
 	    </t>
-    </t>
+    </t>-->
 
 </templates>
