@@ -138,7 +138,7 @@
     </t>
 
     <!-- adapted, but not tested: 9.0 EE -->
-    <t t-extend="FieldSelectionSelect">
+    <t t-extend="FieldSelection">
         <t t-jquery="select">
             this.attr('t-att-data-bt-testing-name', 'widget.name');
             this.attr('t-att-data-bt-testing-model_name', 'widget.view.fields_view.model');
@@ -268,5 +268,10 @@
 		    this.attr('t-att-data-bt-id', 'item and item.action and item.action.id');
 	    </t>
     </t>
+
+    <!-- Code of Alex
+    	    this.attr('t-att-data-bt-type', 'name');
+		    this.attr('t-att-data-bt-id', 'widget.id');
+    -->
 
 </templates>
