@@ -19,7 +19,11 @@
         <t t-jquery="li a.dropdown-toggle">
             this.attr('t-att-data-bt-testing-sub-menu_id', 'second_level_menu.id');
         </t>
+        <t t-jquery=".dropdown-menu">
+            this.attr('t-att-data-bt-testing-xml-name', 'id');
+        </t>
     </t>
+    
 
 <!--
             this.attr('t-att-data-bt-testing-model_name', 'widget and widget.getParent and widget.getParent().view and widget.getParent().view.fields_view.model');
