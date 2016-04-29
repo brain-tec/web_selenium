@@ -24,6 +24,13 @@
         </t>
     </t>
     
+    <t t-extend="ViewManager">
+        <t t-jquery="div.oe_view_manager">
+            this.attr('t-att-data-bt-testing-model_name', 'widget and widget.getParent and widget.getParent().view and widget.getParent().view.fields_view.model');
+            this.attr('t-att-data-bt-testing-name', 'widget and widget.getParent and widget.getParent().name');
+        </t>
+    </t>
+    
     <t t-extend="KanbanView.buttons">
         <t t-jquery="button.oe_kanban_button_new">
             this.attr('t-att-data-bt-testing-model_name', 'widget and widget.getParent and widget.getParent().parent and widget.getParent().getParent().view and widget.getParent().getParent().view.fields_view.model');
