@@ -141,7 +141,7 @@
     <t t-extend="FieldSelection">
         <t t-jquery="select">
             this.attr('t-att-data-bt-testing-name', 'widget.name');
-            this.attr('t-att-data-bt-testing-model_name', 'widget.view.fields_view.model');
+            this.attr('t-att-data-bt-testing-model_name', 'widget and widget.view and widget.view.fields_view and widget.view.fields_view.model');
         </t>
 
         <t t-jquery="select option">
