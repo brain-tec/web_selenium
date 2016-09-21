@@ -19,11 +19,7 @@
         <t t-jquery="li a.dropdown-toggle">
             this.attr('t-att-data-bt-testing-sub-menu_id', 'second_level_menu.id');
         </t>
-        <t t-jquery=".dropdown-menu">
-            this.attr('t-att-data-bt-testing-xml-name', 'id');
-        </t>
     </t>
-    
 
 <!--
             this.attr('t-att-data-bt-testing-model_name', 'widget and widget.getParent and widget.getParent().view and widget.getParent().view.fields_view.model');
@@ -52,17 +48,17 @@
 
     <t t-extend="ListView.buttons">
         <!-- tested: ok 9.0 EE -->
-        <t t-jquery="button.oe_list_button_add">
+        <t t-jquery="button.o_list_button_add">
             this.attr('t-att-data-bt-testing-model_name', 'widget and widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model');
             this.attr('data-bt-testing-name', 'oe_list_add');
         </t>
         <!-- adapted, but not tested: 9.0 EE -->
-        <t t-jquery="button.oe_list_button_save">
+        <t t-jquery="button.o_list_button_save">
             this.attr('t-att-data-bt-testing-model_name', 'widget and widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model');
             this.attr('data-bt-testing-name', 'oe_list_save');
         </t>
         <!-- adapted, but not tested: 9.0 EE -->
-        <t t-jquery="button.oe_list_button_discard">
+        <t t-jquery="button.o_list_button_discard">
             this.attr('t-att-data-bt-testing-model_name', 'widget and widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model');
             this.attr('data-bt-testing-name', 'oe_list_discard');
         </t>
@@ -141,10 +137,19 @@
         </t>
     </t>
 
-	<t t-extend="FieldSelection">
+    <!-- adapted, but not tested: 9.0 EE -->
+    <t t-extend="FieldSelection">
         <t t-jquery="select">
             this.attr('t-att-data-bt-testing-name', 'widget.name');
-            this.attr('t-att-data-bt-testing-model_name', 'widget and widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model');
+            this.attr('t-att-data-bt-testing-model_name', 'widget and widget.view and widget.view.fields_view and widget.view.fields_view.model');
+        </t>
+
+        <t t-jquery="select option">
+	    this.attr('t-att-data-type', 'widget.field and widget.field.type');
+	    <!-- When the field is selection take the tecnical value to be language independend. 
+		 If it is a many2one field, take the name of the field instead of the id. It's better to be database independend than language independend
+	    -->
+            this.attr('t-att-data-bt-testing-value', "widget.field.type === 'many2one' ? option[1] : option[0]");
         </t>
     </t>
 
@@ -183,9 +188,9 @@
     <!-- adapted, but not tested: 9.0 EE -->
     <t t-extend="X2ManyControlPanel">
 	    <t t-jquery="div.o_x2m_control_panel">
-            this.attr('t-att-data-bt-testing-model_name', 'widget.__parentedParent.dataset.model');
+            this.attr('t-att-data-bt-testing-model_name', 'widget.__parentedParent.view.model');
             this.attr('t-att-data-bt-testing-name', 'widget.__parentedParent.dataset.child_name');
-            this.attr('t-att-data-bt-testing-submodel_name', 'widget.__parentedParent.view.model');
+            this.attr('t-att-data-bt-testing-submodel_name', 'widget.__parentedParent.dataset.model');
         </t>
     </t>
 
@@ -257,18 +262,16 @@
 	</t>
     </table>
 
-	<t t-extend="Sidebar">
-    	<t t-jquery="div.o_dropdown">
-		    this.attr('t-att-data-bt-type', 'name');
-		    this.attr('t-att-data-bt-id', 'widget.id');
-	    </t>
-    </t>
-
-    <!--<t t-extend="Sidebar">
+    <t t-extend="Sidebar">
     	<t t-jquery="a">
 		    this.attr('t-att-data-bt-type', 'item and item.action and item.action.type');
 		    this.attr('t-att-data-bt-id', 'item and item.action and item.action.id');
 	    </t>
-    </t>-->
+    </t>
+
+    <!-- Code of Alex
+    	    this.attr('t-att-data-bt-type', 'name');
+		    this.attr('t-att-data-bt-id', 'widget.id');
+    -->
 
 </templates>
