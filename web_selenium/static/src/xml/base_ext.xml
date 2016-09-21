@@ -188,9 +188,9 @@
     <!-- adapted, but not tested: 9.0 EE -->
     <t t-extend="X2ManyControlPanel">
 	    <t t-jquery="div.o_x2m_control_panel">
-            this.attr('t-att-data-bt-testing-model_name', 'widget.__parentedParent.dataset.model');
+            this.attr('t-att-data-bt-testing-model_name', 'widget.__parentedParent.view.model');
             this.attr('t-att-data-bt-testing-name', 'widget.__parentedParent.dataset.child_name');
-            this.attr('t-att-data-bt-testing-submodel_name', 'widget.__parentedParent.view.model');
+            this.attr('t-att-data-bt-testing-submodel_name', 'widget.__parentedParent.dataset.model');
         </t>
     </t>
 
