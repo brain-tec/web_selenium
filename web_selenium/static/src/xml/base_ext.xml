@@ -24,6 +24,13 @@
         </t>
     </t>
     
+    <t t-extend="ViewManager">
+        <t t-jquery="div.oe_view_manager">
+            this.attr('t-att-data-bt-testing-model_name', 'widget and widget.getParent and widget.getParent().view and widget.getParent().view.fields_view.model');
+            this.attr('t-att-data-bt-testing-name', 'widget and widget.getParent and widget.getParent().name');
+        </t>
+    </t>
+    
     <t t-extend="KanbanView.buttons">
         <t t-jquery="button.oe_kanban_button_new">
             this.attr('t-att-data-bt-testing-model_name', 'widget and widget.getParent and widget.getParent().parent and widget.getParent().getParent().view and widget.getParent().getParent().view.fields_view.model');
@@ -126,6 +133,14 @@
 		 If it is a many2one field, take the name of the field instead of the id. It's better to be database independend than language independend
 	    -->
             this.attr('t-att-data-bt-testing-value', "widget.field.type === 'many2one' ? option[1] : option[0]");
+        </t>
+    </t>
+
+    <!-- tested: ok -->
+    <t t-extend="FieldRadio">
+        <t t-jquery="input">
+            this.attr('t-att-data-bt-testing-name', 'widget.name');
+            this.attr('t-att-data-bt-testing-model_name', 'widget.view.fields_view.model');
         </t>
     </t>
 
