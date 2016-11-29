@@ -136,6 +136,14 @@
         </t>
     </t>
 
+    <!-- tested: ok -->
+    <t t-extend="FieldRadio">
+        <t t-jquery="input">
+            this.attr('t-att-data-bt-testing-name', 'widget.name');
+            this.attr('t-att-data-bt-testing-model_name', 'widget.view.fields_view.model');
+        </t>
+    </t>
+
     <t t-extend="FieldMany2One">
         <t t-jquery="t:first" t-operation="before">
             <t t-set="bt_testing_model_name" t-value="widget and widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model"/>
