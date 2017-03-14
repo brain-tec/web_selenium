@@ -40,8 +40,20 @@
         </t>
     </t>
 
-
-
+    <t t-extend="KanbanView.record">
+        <t t-jquery="div.oe_kanban_record">
+            this.attr('t-att-data-bt-testing-model_name', 'widget and widget.getParent and widget.getParent().view and widget.getParent().view.fields_view.model');
+            this.attr('t-att-data-bt-testing-name', 'widget and widget.record and widget.record.name and widget.record.name.raw_value');
+        </t>
+    </t>
+    
+    <t t-extend="KanbanView.group_records_container">
+        <t t-jquery="td.oe_kanban_column">
+            this.attr('t-att-data-bt-testing-model_name', 'widget and widget.getParent and widget.getParent().fields_view and widget.getParent().fields_view.model');
+            this.attr('t-att-data-bt-testing-name', 'widget and widget.title');
+        </t>
+    </t>
+    
     <!-- tested: ok -->
     <t t-extend="ListView.buttons">
         <t t-jquery="button.oe_list_add">
@@ -55,7 +67,7 @@
     <t t-extend="FormView.buttons">
         <t t-jquery="button.oe_form_button_edit">
             this.attr('t-att-data-bt-testing-model_name', 'widget and widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model');
-	    this.attr('data-bt-testing-name', 'oe_form_button_edit');
+            this.attr('data-bt-testing-name', 'oe_form_button_edit');
         </t>
         <t t-jquery="button.oe_form_button_create">
             this.attr('t-att-data-bt-testing-model_name', 'widget and widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model');
@@ -81,7 +93,7 @@
     <!-- tested: ok -->
     <t t-extend="FieldChar">
         <t t-jquery="t:first" t-operation="before">
-            <t t-set="bt_testing_model_name" t-value="widget and widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model"/>
+            <t t-set="bt_testing_model_name" t-value="widget and widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model" />
         </t>
         <t t-jquery="input">
             this.attr('t-att-data-bt-testing-name', 'widget.name');
@@ -92,7 +104,7 @@
     <!-- tested: ok -->
     <t t-extend="FieldEmail">
         <t t-jquery="t:first" t-operation="before">
-            <t t-set="bt_testing_model_name" t-value="widget and widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model"/>
+            <t t-set="bt_testing_model_name" t-value="widget and widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model" />
         </t>
         <t t-jquery="input">
             this.attr('t-att-data-bt-testing-name', 'widget.name');
@@ -103,7 +115,7 @@
     <!-- tested: ok -->
     <t t-extend="FieldText">
         <t t-jquery="t:first" t-operation="before">
-            <t t-set="bt_testing_model_name" t-value="widget and widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model"/>
+            <t t-set="bt_testing_model_name" t-value="widget and widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model" />
         </t>
         <t t-jquery="textarea">
             this.attr('t-att-data-bt-testing-name', 'widget.name');
@@ -113,7 +125,7 @@
 
     <t t-extend="web.datepicker">
         <t t-jquery="t:first" t-operation="before">
-            <t t-set="bt_testing_model_name" t-value="widget and widget.getParent and widget.getParent().getParent and widget.getParent().getParent().dataset and widget.getParent().getParent().dataset.model"/>
+            <t t-set="bt_testing_model_name" t-value="widget and widget.getParent and widget.getParent().getParent and widget.getParent().getParent().dataset and widget.getParent().getParent().dataset.model" />
         </t>
         <t t-jquery="input.oe_datepicker_master">
             this.attr('t-att-data-bt-testing-name', 'widget.name');
@@ -128,10 +140,10 @@
         </t>
 
         <t t-jquery="select option">
-	    this.attr('t-att-data-type', 'widget.field and widget.field.type');
-	    <!-- When the field is selection take the tecnical value to be language independend. 
-		 If it is a many2one field, take the name of the field instead of the id. It's better to be database independend than language independend
-	    -->
+          this.attr('t-att-data-type', 'widget.field and widget.field.type');
+          <!-- When the field is selection take the tecnical value to be language independend. 
+           If it is a many2one field, take the name of the field instead of the id. It's better to be database independend than language independend
+          -->
             this.attr('t-att-data-bt-testing-value', "widget.field.type === 'many2one' ? option[1] : option[0]");
         </t>
     </t>
@@ -146,7 +158,7 @@
 
     <t t-extend="FieldMany2One">
         <t t-jquery="t:first" t-operation="before">
-            <t t-set="bt_testing_model_name" t-value="widget and widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model"/>
+            <t t-set="bt_testing_model_name" t-value="widget and widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model" />
         </t>
         <t t-jquery="span.oe_form_field_many2one input[type='text']">
             this.attr('t-att-data-bt-testing-name', 'widget.name');
@@ -156,7 +168,7 @@
 
     <t t-extend="FieldMany2ManyTags">
         <t t-jquery="t:first" t-operation="before">
-            <t t-set="bt_testing_model_name" t-value="widget and widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model"/>
+            <t t-set="bt_testing_model_name" t-value="widget and widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model" />
         </t>
         <t t-jquery="div.oe_tags">
             this.attr('t-att-data-bt-testing-name', 'widget.name');
@@ -173,7 +185,7 @@
 
     <t t-extend="FieldBinaryFile">
         <t t-jquery="t:first" t-operation="before">
-            <t t-set="bt_testing_model_name" t-value="widget and widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model"/>
+            <t t-set="bt_testing_model_name" t-value="widget and widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model" />
         </t>
         <t t-jquery="input.field_binary">
             this.attr('t-att-data-bt-testing-name', 'widget.name');
@@ -224,16 +236,16 @@
     </t>
 
     <table t-extend="ListView.row">
-	<t t-jquery=":parent">
+        <t t-jquery=":parent">
             this.attr('t-att-data-bt-testing-model_name', 'view.dataset and view.dataset.model');
-	</t>
+        </t>
     </table>
 
     <t t-extend="Sidebar">
-	<t t-jquery="a.oe_sidebar_action_a">
-		this.attr('t-att-data-bt-type', 'item.action and item.action.type');
-		this.attr('t-att-data-bt-id', 'item.action and item.action.id');
-	</t>
+        <t t-jquery="a.oe_sidebar_action_a">
+            this.attr('t-att-data-bt-type', 'item.action and item.action.type');
+            this.attr('t-att-data-bt-id', 'item.action and item.action.id');
+        </t>
     </t>
 
 </templates>
