@@ -52,7 +52,9 @@
     "init_xml" : [],
     "demo_xml" : [],
     "update_xml" : [],
-    "data" : [],
+    "data" : [
+        'assets.xml'
+    ],
     "js" : [],
     "css" : [],
     "qweb" : [
