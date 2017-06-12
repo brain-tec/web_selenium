@@ -204,8 +204,8 @@
     <t t-extend="X2ManyControlPanel">
         <t t-jquery="div.o_x2m_control_panel">
             this.attr('t-att-data-bt-testing-model_name', 'widget.getParent() and widget.getParent().view.model');
-            this.attr('t-att-data-bt-testing-name', 'widget.getParent and widget.getParent().dataset.child_name');
-            this.attr('t-att-data-bt-testing-submodel_name', 'widget.getParent and widget.getParent().dataset.model');
+            this.attr('t-att-data-bt-testing-name', 'widget.getParent() and widget.getParent().dataset and widget.getParent().dataset.child_name');
+            this.attr('t-att-data-bt-testing-submodel_name', 'widget.getParent() and widget.getParent().dataset and widget.getParent().dataset.model');
         </t>
     </t>
 
@@ -289,3 +289,4 @@
     -->
 
 </templates>
+
