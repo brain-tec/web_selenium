@@ -1,0 +1,7 @@
+<odoo>
+  <template id="assets_backend" name="web_selenium_assets" inherit_id="web.assets_backend">
+    <xpath expr="." position="inside">
+      <script type="text/javascript" src="/web_selenium/static/src/js/base_ext.js" />
+    </xpath>
+  </template>
+</odoo>
