@@ -96,7 +96,7 @@
         </t>
     </t>
 
-     <!-- tested: ok -->
+    <!-- tested: ok -->
     <t t-extend="FieldChar">
         <t t-jquery="input">
             this.attr('t-att-data-bt-testing-name', 'widget.name');
@@ -227,7 +227,7 @@
             this.attr('t-att-data-bt-testing-model_name', 'widget.view.fields_view.model');
             this.attr('t-att-name', "widget.view and widget.view.fields_view and widget.view.fields_view.model + '_' + widget.name")
         </t>
-</t>
+    </t>
 
 
     <!-- adapted, but not tested: 9.0 EE
