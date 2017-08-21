@@ -8,14 +8,8 @@
     "version": "10.0.1.0.0",
     "category": "Hidden",
     "website": "http://www.brain-tec.ch",
-    "author": "Andreas Stauder <andreas.stauder@brain-tec.ch>",
-    "depends": [
-        "web",
-        "web_kanban",
-    ],
-    "data": [
-        'views/webclient_templates.xml',
-    ],
+    "author": "Andreas Stauder <andreas.stauder@brain-tec.ch> and Alejandro Sanchez <alejandro.sanchez@braintec-group.com>",
+    "depends": ["web"],
     "qweb": [
         'static/src/xml/base_ext.xml',
     ],
