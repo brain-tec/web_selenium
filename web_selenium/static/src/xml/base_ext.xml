@@ -96,11 +96,12 @@
         </t>
     </t>
 
-    <!-- tested: ok -->
+     <!-- tested: ok -->
     <t t-extend="FieldChar">
         <t t-jquery="input">
             this.attr('t-att-data-bt-testing-name', 'widget.name');
             this.attr('t-att-data-bt-testing-model_name', 'widget.view.fields_view.model');
+            this.attr('t-att-name', "widget.view and widget.view.fields_view and widget.view.fields_view.model + '_' + widget.name")
         </t>
     </t>
 
@@ -109,6 +110,7 @@
         <t t-jquery="input">
             this.attr('t-att-data-bt-testing-name', 'widget.name');
             this.attr('t-att-data-bt-testing-model_name', 'widget.view.fields_view.model');
+            this.attr('t-att-name', "widget.view and widget.view.fields_view and widget.view.fields_view.model + '_' + widget.name")
         </t>
     </t>
 
@@ -118,6 +120,7 @@
         <t t-jquery="input">
             this.attr('t-att-data-bt-testing-name', 'widget.name');
             this.attr('t-att-data-bt-testing-model_name', 'widget.view.fields_view.model');
+            this.attr('t-att-name', "widget.view and widget.view.fields_view and widget.view.fields_view.model + '_' + widget.name")
         </t>
     </t>
 
@@ -126,6 +129,7 @@
         <t t-jquery="textarea">
             this.attr('t-att-data-bt-testing-name', 'widget.name');
             this.attr('t-att-data-bt-testing-model_name', 'widget.view.fields_view.model');
+            this.attr('t-att-name', "widget.view and widget.view.fields_view and widget.view.fields_view.model + '_' + widget.name")
         </t>
     </t>
 
@@ -134,6 +138,7 @@
         <t t-jquery="input.o_datepicker_input">
             this.attr('t-att-data-bt-testing-name', 'widget.name');
             this.attr('t-att-data-bt-testing-model_name', 'widget.getParent() and widget.getParent().view and widget.getParent().view.fields_view and widget.getParent().view.fields_view.model');
+            this.attr('t-att-name', "widget.getParent() and widget.getParent().view and widget.getParent().view.fields_view and widget.getParent().view.fields_view.model + '_' + widget.name")
         </t>
     </t>
 
@@ -142,6 +147,7 @@
         <t t-jquery="input">
             this.attr('t-att-data-bt-testing-name', 'widget.name');
             this.attr('t-att-data-bt-testing-model_name', 'widget.view.fields_view.model');
+            this.attr('t-att-name', "widget.view and widget.view.fields_view and widget.view.fields_view.model + '_' + widget.name")
         </t>
     </t>
 
@@ -150,11 +156,13 @@
         <t t-jquery="select">
             this.attr('t-att-data-bt-testing-name', 'widget.name');
             this.attr('t-att-data-bt-testing-model_name', 'widget and widget.view and widget.view.fields_view and widget.view.fields_view.model');
+            this.attr('t-att-name', "widget.view and widget.view.fields_view and widget.view.fields_view.model + '_' + widget.name")
+            this.attr('type_data_is', 'select');
         </t>
 
         <t t-jquery="select option">
 	    this.attr('t-att-data-type', 'widget.field and widget.field.type');
-	    <!-- When the field is selection take the tecnical value to be language independend. 
+	    <!-- When the field is selection take the tecnical value to be language independend.
 		 If it is a many2one field, take the name of the field instead of the id. It's better to be database independend than language independend
 	    -->
             this.attr('t-att-data-bt-testing-value', "widget.field.type === 'many2one' ? option[1] : option[0]");
@@ -166,6 +174,8 @@
         <t t-jquery="input[type='text']">
             this.attr('t-att-data-bt-testing-name', 'widget.name');
             this.attr('t-att-data-bt-testing-model_name', 'widget.view and widget.view.fields_view and widget.view.fields_view.model');
+            this.attr('t-att-name', "widget.view and widget.view.fields_view and widget.view.fields_view.model + '_' + widget.name");
+            this.attr('type_data_is', 'many2one');
         </t>
     </t>
 
@@ -174,6 +184,8 @@
         <t t-jquery="div.o_form_field_many2manytags">
             this.attr('t-att-data-bt-testing-name', 'widget.name');
             this.attr('t-att-data-bt-testing-model_name', 'widget.view.fields_view.model');
+            this.attr('t-att-name', "widget.view and widget.view.fields_view and widget.view.fields_view.model + '_' + widget.name")
+            this.attr('type_data_is', 'many2oneTags');
         </t>
     </t>
 
@@ -182,6 +194,7 @@
         <t t-jquery="div.o_form_field_boolean input[type='checkbox']">
             this.attr('t-att-data-bt-testing-name', 'widget.name');
             this.attr('t-att-data-bt-testing-model_name', 'widget.view.fields_view.model');
+            this.attr('t-att-name', "widget.view and widget.view.fields_view and widget.view.fields_view.model + '_' + widget.name")
         </t>
     </t>
 
@@ -190,6 +203,7 @@
         <t t-jquery="input.field_binary">
             this.attr('t-att-data-bt-testing-name', 'widget.name');
             this.attr('t-att-data-bt-testing-model_name', 'widget.view.fields_view.model');
+            this.attr('t-att-name', "widget.view and widget.view.fields_view and widget.view.fields_view.model + '_' + widget.name")
         </t>
     </t>
 
@@ -199,6 +213,8 @@
             this.attr('t-att-data-bt-testing-model_name', 'widget.__parentedParent.view.model');
             this.attr('t-att-data-bt-testing-name', 'widget.__parentedParent.dataset.child_name');
             this.attr('t-att-data-bt-testing-submodel_name', 'widget.__parentedParent.dataset.model');
+            this.attr('t-att-name', "widget.__parentedParent.view.model + '_' + widget.__parentedParent.dataset.child_name + '_' + widget.__parentedParent.dataset.model")
+            this.attr('type_data_is', 'X2ManyControlPanel');
         </t>
     </t>
 
@@ -209,9 +225,10 @@
         <t t-jquery="input.o_form_radio">
             this.attr('t-att-data-bt-testing-name', 'widget.name');
             this.attr('t-att-data-bt-testing-model_name', 'widget.view.fields_view.model');
+            this.attr('t-att-name', "widget.view and widget.view.fields_view and widget.view.fields_view.model + '_' + widget.name")
         </t>
-    </t>
-    -->
+</t>
+
 
     <!-- adapted, but not tested: 9.0 EE
     <t t-extend="ListView.row">
