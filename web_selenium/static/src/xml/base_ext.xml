@@ -243,6 +243,8 @@
         <t t-jquery="button">
             this.attr('t-att-data-bt-testing-model_name', 'widget and widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model');
             this.attr('t-att-data-bt-testing-name', 'widget.node.attrs.name');
+            this.attr('t-att-name', "widget and widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model + '_' + widget.node.attrs.name")
+            this.attr('type_data_is', 'WidgetButton');
         </t>
     </t>
 
