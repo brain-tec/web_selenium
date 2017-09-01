@@ -207,13 +207,15 @@
         </t>
     </t>
 
-    <!-- adapted, but not tested: 9.0 EE -->
+    <!-- Out commented because of an error in version 10 -->
     <t t-extend="X2ManyControlPanel">
 	    <t t-jquery="div.o_x2m_control_panel">
-            this.attr('t-att-data-bt-testing-model_name', 'widget.__parentedParent.view.model');
+            this.attr('type_data_is', 'X2ManyControlPanel');
+            <!--this.attr('t-att-data-bt-testing-model_name', 'widget.__parentedParent.view.model');
             this.attr('t-att-data-bt-testing-name', 'widget.__parentedParent.dataset.child_name');
             this.attr('t-att-data-bt-testing-submodel_name', 'widget.__parentedParent.dataset.model');
-            this.attr('t-att-name', "widget.__parentedParent.view.model + '_' + widget.__parentedParent.dataset.child_name + '_' + widget.__parentedParent.dataset.model")
+            this.attr('t-att-name', "widget.__parentedParent.view.model + '_' + widget.__parentedParent.dataset.child_name + '_' + widget.__parentedParent.dataset.model")-->
+            this.attr('data-bt-testing-submodel_name', 'X2Many');
             this.attr('type_data_is', 'X2ManyControlPanel');
         </t>
     </t>
