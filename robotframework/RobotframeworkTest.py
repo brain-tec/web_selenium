@@ -136,7 +136,13 @@ class RobotframeworkTest(HttpCase):
         log_directory = appdirs.user_log_dir(appname=release.product_name,
                                              appauthor=release.author)
 
-        log_directory = log_directory.replace("/home", "/vagrant")
+        # when we are in a vagrant machine, we save it in /vagrant
+        # otherwise its overwritten
+        if os.path.isdir("/vagrant"):
+            # we are in a unix environment for sure and we know
+            # that we just have to replace /home/openerp/... into
+            # /vagrant/openerp/...
+            log_directory = log_directory.replace("/home", "/vagrant")
 
         # odoo_directory = os.path.dirname(os.path.abspath(sys.argv[0]))
         log_directory = os.path.join(log_directory, 'robotframework')
