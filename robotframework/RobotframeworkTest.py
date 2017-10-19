@@ -157,7 +157,12 @@ class RobotframeworkTest(HttpCase):
         _logger.info("web.base.url: %s" %
                      self.env['ir.config_parameter'].get_param('web.base.url'))
 
-        cmd = ['pybot',
+        pybot = 'pybot'
+        # solution for odoo.sh
+        if os.path.isfile("/home/odoo/.local/bin/pybot"):
+            pybot = "/home/odoo/.local/bin/pybot"
+
+        cmd = [pybot,
                "-v URL:%s" % "http://%s:%s%s" % (HOST, PORT, url_path),
                "-v COOKIE_NAME:session_id",
                "-v COOKIE_VALUE:%s" % self.session_id,
