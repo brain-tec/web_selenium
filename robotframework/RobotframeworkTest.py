@@ -4,6 +4,8 @@ The module :mod:`openerp.tests.common` provides unittest test cases and a few
 helpers and classes to write tests.
 
 """
+import odoo.tools.appdirs as appdirs
+import odoo.release as release
 import errno
 import logging
 import os
@@ -123,7 +125,7 @@ class RobotframeworkTest(HttpCase):
 
         # transform the testfile path into a absolut path by
         # searching for the addon
-        addon_name = str(self.__class__.__module__)[len('openerp.addons.'):]
+        addon_name = str(self.__class__.__module__)[len('odoo.addons.'):]
         addon_name = addon_name[:addon_name.find('.')]
         testfile_path = os.path.join(get_module_path(addon_name), testfile)
 
@@ -131,8 +133,13 @@ class RobotframeworkTest(HttpCase):
 
         # the log directory is odoo so it works best in runbot
         # normally /home/openerp/odoo
-        odoo_directory = os.path.dirname(os.path.abspath(sys.argv[0]))
-        log_directory = os.path.join(odoo_directory, '..', 'logs', 'robot')
+        log_directory = appdirs.user_log_dir(appname=release.product_name,
+                                             appauthor=release.author)
+
+        log_directory = log_directory.replace("/home", "/vagrant")
+
+        # odoo_directory = os.path.dirname(os.path.abspath(sys.argv[0]))
+        log_directory = os.path.join(log_directory, 'robotframework')
         if not os.path.exists(log_directory):
             os.makedirs(log_directory)
 
@@ -140,6 +147,9 @@ class RobotframeworkTest(HttpCase):
                                     str(self.__class__.__name__),
                                     self._testMethodName)
         log_directory = tempfile.mkdtemp(prefix=log_prefix, dir=log_directory)
+
+        _logger.info("web.base.url: %s" %
+                     self.env['ir.config_parameter'].get_param('web.base.url'))
 
         cmd = ['pybot',
                "-v URL:%s" % "http://%s:%s%s" % (HOST, PORT, url_path),
