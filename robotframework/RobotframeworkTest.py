@@ -158,12 +158,16 @@ class RobotframeworkTest(HttpCase):
                      self.env['ir.config_parameter'].get_param('web.base.url'))
 
         pybot = 'pybot'
+        url = "http://%s:%s%s" % (HOST, PORT, url_path)
         # solution for odoo.sh
         if os.path.isfile("/home/odoo/.local/bin/pybot"):
             pybot = "/home/odoo/.local/bin/pybot"
+            base_url = \
+                self.env['ir.config_parameter'].get_param('web.base.url')
+            url = "%s%s?db=%s" % (base_url, url_path, self.env.cr.dbname)
 
         cmd = [pybot,
-               "-v URL:%s" % "http://%s:%s%s" % (HOST, PORT, url_path),
+               "-v URL:%s" % url,
                "-v COOKIE_NAME:session_id",
                "-v COOKIE_VALUE:%s" % self.session_id,
                "-d", log_directory,
