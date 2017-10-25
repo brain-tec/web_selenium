@@ -6,6 +6,7 @@ helpers and classes to write tests.
 """
 import odoo.tools.appdirs as appdirs
 import odoo.release as release
+import odoo.tools.config as config
 import errno
 import logging
 import os
@@ -162,9 +163,14 @@ class RobotframeworkTest(HttpCase):
         # solution for odoo.sh
         if os.path.isfile("/home/odoo/.local/bin/pybot"):
             pybot = "/home/odoo/.local/bin/pybot"
+            host = config["db_user"]
+            # cut p_
+            host = host[2:]
+            host = host.replace('_', '-')
+            host = "https://%s.dev.odoo.com" % host
             base_url = \
                 self.env['ir.config_parameter'].get_param('web.base.url')
-            url = "%s%s?db=%s" % (base_url, url_path, self.env.cr.dbname)
+            url = "%s%s?db=%s" % (host, url_path, self.env.cr.dbname)
 
         cmd = [pybot,
                "-v URL:%s" % url,
