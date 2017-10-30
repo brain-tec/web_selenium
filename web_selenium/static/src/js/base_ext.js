@@ -79,7 +79,7 @@ odoo.define('web_selenium.base_ext', function(require){
   Dialog.include({
     set_buttons: function() {
       this._super.apply(this, arguments);
-      this.$footer.find('button').attr('data-bt-testing-model_name', this.dataset.model);
+      this.$footer.find('button').attr('data-bt-testing-model_name', this.dataset && this.dataset.model);
     }
   });
 
