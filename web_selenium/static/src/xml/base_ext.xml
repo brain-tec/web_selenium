@@ -1,306 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- vim:fdl=1: -->
-<templates id="template" xml:space="preserve">
+<templates id="template">
 
-
-    <!--<t t-extend="Login">-->
-        <!--<t t-jquery="input[name='name']" t-operation="append">-->
-            <!--<t t-att-value="widget.selected_login || ''" />-->
-        <!--</t>-->
-
-        <!--<t t-jquery="input[name='name']" t-operation="append">-->
-            <!--<t t-att-value="widget.selected_password || ''" />-->
-        <!--</t>-->
-
-    <!--</t>-->
-
-    <!-- tested: ok 9.0 EE -->
-    <t t-extend="Menu.sections">
-        <t t-jquery="li a.dropdown-toggle">
-            this.attr('t-att-data-bt-testing-sub-menu_id', 'second_level_menu.id');
-        </t>
+  <!-- tested: ok 11.0 EE -->
+  <t t-extend="Menu.sections">
+    <t t-jquery="li a.dropdown-toggle">
+      this.attr('t-att-data-bt-testing-sub-menu_id', 'second_level_menu.id');
     </t>
+  </t>
 
-<!--
-            this.attr('t-att-data-bt-testing-model_name', 'widget and widget.getParent and widget.getParent().view and widget.getParent().view.fields_view.model');
-            this.attr('t-att-data-bt-testing-name', 'this.widget and widget.getParent and widget.getParent().name');
--->
-
-    <!-- tested: ok -->
-    <t t-extend="ViewManager">
-        <t t-jquery="div.oe-view-manager-content">
-            this.attr('data-batomo', 'my');
-            this.attr('t-att-data-bt-testing-model_name', 'widget and widget.getParent and widget.getParent().view and widget.getParent().view.fields_view.model');
-            this.attr('t-att-data-bt-testing-name', 'widget and widget.getParent and widget.getParent().name');
-            this.attr('t-att-data-bt-testing-submodel_name', 'widget.model');
-        </t>
+  <!-- tested: ok 11.0EE -->
+  <t t-extend="KanbanView.buttons">
+    <t t-jquery="button.o-kanban-button-new">
+      this.attr('t-att-data-bt-testing-model_name', 'widget and widget.modelName');
     </t>
+  </t>
 
-    <t t-extend="KanbanView.buttons">
-        <t t-jquery="button.oe_kanban_button_new">
-            this.attr('t-att-data-bt-testing-model_name', 'widget and widget.getParent and widget.getParent().parent and widget.getParent().getParent().view and widget.getParent().getParent().view.fields_view.model');
-            this.attr('t-att-data-bt-testing-name', 'widget and widget.getParent and widget.getParent().parent and widget.getParent().getParent().view and widget.getParent().getParent().name');
-            this.attr('data-bt-testing-button', 'oe_kanban_button_new');
-            this.attr('t-att-data-bt-testing-submodel_name', 'widget.model');
-        </t>
+  <!-- tested: ok 11.0 EE -->
+  <t t-extend="ListView.buttons">
+    <t t-jquery="button.o_list_button_add, button.o_list_button_save, button.o_list_button_discard">
+      this.attr('t-att-data-bt-testing-model_name', 'widget and widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model');
     </t>
-
-
-    <t t-extend="ListView.buttons">
-        <!-- tested: ok 9.0 EE -->
-        <t t-jquery="button.o_list_button_add">
-            this.attr('t-att-data-bt-testing-model_name', 'widget and widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model');
-            this.attr('data-bt-testing-name', 'oe_list_add');
-        </t>
-        <!-- adapted, but not tested: 9.0 EE -->
-        <t t-jquery="button.o_list_button_save">
-            this.attr('t-att-data-bt-testing-model_name', 'widget and widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model');
-            this.attr('data-bt-testing-name', 'oe_list_save');
-        </t>
-        <!-- adapted, but not tested: 9.0 EE -->
-        <t t-jquery="button.o_list_button_discard">
-            this.attr('t-att-data-bt-testing-model_name', 'widget and widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model');
-            this.attr('data-bt-testing-name', 'oe_list_discard');
-        </t>
+    <t t-jquery="button.o_list_button_add">
+      this.attr('data-bt-testing-name', 'oe_list_add');
     </t>
-
-
-    <!-- tested: ok 9.0 EE -->
-    <t t-extend="FormView.buttons">
-        <!-- tested: ok 9.0 EE -->
-        <t t-jquery="button.o_form_button_edit">
-            this.attr('t-att-data-bt-testing-model_name', 'widget and widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model');
-	        this.attr('data-bt-testing-name', 'oe_form_button_edit');
-        </t>
-        <!-- tested: ok 9.0 EE -->
-        <t t-jquery="button.o_form_button_create">
-            this.attr('t-att-data-bt-testing-model_name', 'widget and widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model');
-            this.attr('data-bt-testing-name', 'oe_form_button_create');
-        </t>
-        <!-- tested: ok 9.0 EE -->
-        <t t-jquery="button.o_form_button_save">
-            this.attr('t-att-data-bt-testing-model_name', 'widget and widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model');
-            this.attr('data-bt-testing-name', 'oe_form_button_save');
-        </t>
-        <!-- tested: ok 9.0 EE -->
-        <t t-jquery="button.o_form_button_cancel">
-            this.attr('t-att-data-bt-testing-model_name', 'widget and widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model');
-            this.attr('data-bt-testing-name', 'oe_form_button_cancel');
-        </t>
+    <t t-jquery="button.o_list_button_save">
+      this.attr('data-bt-testing-name', 'oe_list_save');
     </t>
-
-    <!-- tested: ok 9.0 EE -->
-    <t t-extend="FormRenderingNotebook">
-        <t t-jquery="ul li a">
-            this.attr('t-att-data-bt-testing-original-string', 'page.string');
-        </t>
+    <t t-jquery="button.o_list_button_discard">
+      this.attr('data-bt-testing-name', 'oe_list_discard');
     </t>
+  </t>
 
-    <!-- tested: ok -->
-    <t t-extend="FieldChar">
-        <t t-jquery="input">
-            this.attr('t-att-data-bt-testing-name', 'widget.name');
-            this.attr('t-att-data-bt-testing-model_name', 'widget.view.fields_view.model');
-            this.attr('t-att-name', "widget.view and widget.view.fields_view and widget.view.fields_view.model + '_' + widget.name")
-        </t>
+  <!-- tested: ok 11.0EE -->
+  <t t-extend="Sidebar">
+    <t t-jquery="a">
+      this.attr('t-att-data-bt-type', 'item and item.action and item.action.type');
+      this.attr('t-att-data-bt-id', 'item and item.action and item.action.id');
     </t>
-
-    <!-- tested: no -->
-    <t t-extend="FieldMonetary">
-        <t t-jquery="input">
-            this.attr('t-att-data-bt-testing-name', 'widget.name');
-            this.attr('t-att-data-bt-testing-model_name', 'widget.view.fields_view.model');
-            this.attr('t-att-name', "widget.view and widget.view.fields_view and widget.view.fields_view.model + '_' + widget.name")
-        </t>
-    </t>
-
-
-    <!-- adapted, but not tested: 9.0 EE -->
-    <t t-extend="FieldEmail">
-        <t t-jquery="input">
-            this.attr('t-att-data-bt-testing-name', 'widget.name');
-            this.attr('t-att-data-bt-testing-model_name', 'widget.view.fields_view.model');
-            this.attr('t-att-name', "widget.view and widget.view.fields_view and widget.view.fields_view.model + '_' + widget.name")
-        </t>
-    </t>
-
-    <!-- ok: 9.0 EE -->
-    <t t-extend="FieldText">
-        <t t-jquery="textarea">
-            this.attr('t-att-data-bt-testing-name', 'widget.name');
-            this.attr('t-att-data-bt-testing-model_name', 'widget.view.fields_view.model');
-            this.attr('t-att-name', "widget.view and widget.view.fields_view and widget.view.fields_view.model + '_' + widget.name")
-        </t>
-    </t>
-
-    <!-- ok: 9.0 EE -->
-    <t t-extend="web.datepicker">
-        <t t-jquery="input.o_datepicker_input">
-            this.attr('t-att-data-bt-testing-name', 'widget.name');
-            this.attr('t-att-data-bt-testing-model_name', 'widget.getParent() and widget.getParent().view and widget.getParent().view.fields_view and widget.getParent().view.fields_view.model');
-            this.attr('t-att-name', "widget.getParent() and widget.getParent().view and widget.getParent().view.fields_view and widget.getParent().view.fields_view.model + '_' + widget.name")
-        </t>
-    </t>
-
-    <!-- tested: ok -->
-    <t t-extend="FieldRadio">
-        <t t-jquery="input">
-            this.attr('t-att-data-bt-testing-name', 'widget.name');
-            this.attr('t-att-data-bt-testing-model_name', 'widget.view.fields_view.model');
-            this.attr('t-att-name', "widget.view and widget.view.fields_view and widget.view.fields_view.model + '_' + widget.name")
-        </t>
-    </t>
-
-    <!-- adapted, but not tested: 9.0 EE -->
-    <t t-extend="FieldSelection">
-        <t t-jquery="select">
-            this.attr('t-att-data-bt-testing-name', 'widget.name');
-            this.attr('t-att-data-bt-testing-model_name', 'widget and widget.view and widget.view.fields_view and widget.view.fields_view.model');
-            this.attr('t-att-name', "widget.view and widget.view.fields_view and widget.view.fields_view.model + '_' + widget.name")
-            this.attr('type_data_is', 'select');
-        </t>
-
-        <t t-jquery="select option">
-	    this.attr('t-att-data-type', 'widget.field and widget.field.type');
-	    <!-- When the field is selection take the tecnical value to be language independend.
-		 If it is a many2one field, take the name of the field instead of the id. It's better to be database independend than language independend
-	    -->
-            this.attr('t-att-data-bt-testing-value', "widget.field.type === 'many2one' ? option[1] : option[0]");
-        </t>
-    </t>
-
-    <!-- ok: 9.0 EE -->
-    <t t-extend="FieldMany2One">
-        <t t-jquery="input[type='text']">
-            this.attr('t-att-data-bt-testing-name', 'widget.name');
-            this.attr('t-att-data-bt-testing-model_name', 'widget.view and widget.view.fields_view and widget.view.fields_view.model');
-            this.attr('t-att-name', "widget.view and widget.view.fields_view and widget.view.fields_view.model + '_' + widget.name");
-            this.attr('type_data_is', 'many2one');
-        </t>
-    </t>
-
-    <!-- adapted, but not tested: 9.0 EE -->
-    <t t-extend="FieldMany2ManyTags">
-        <t t-jquery="div.o_form_field_many2manytags">
-            this.attr('t-att-data-bt-testing-name', 'widget.name');
-            this.attr('t-att-data-bt-testing-model_name', 'widget.view.fields_view.model');
-            this.attr('t-att-name', "widget.view and widget.view.fields_view and widget.view.fields_view.model + '_' + widget.name")
-            this.attr('type_data_is', 'many2oneTags');
-        </t>
-    </t>
-
-    <!-- adapted, but not tested: 9.0 EE -->
-    <t t-extend="FieldBoolean">
-        <t t-jquery="div.o_form_field_boolean input[type='checkbox']">
-            this.attr('t-att-data-bt-testing-name', 'widget.name');
-            this.attr('t-att-data-bt-testing-model_name', 'widget.view.fields_view.model');
-            this.attr('t-att-name', "widget.view and widget.view.fields_view and widget.view.fields_view.model + '_' + widget.name")
-        </t>
-    </t>
-
-    <!-- adapted, but not tested: 9.0 EE -->
-    <t t-extend="FieldBinaryFile">
-        <t t-jquery="input.field_binary">
-            this.attr('t-att-data-bt-testing-name', 'widget.name');
-            this.attr('t-att-data-bt-testing-model_name', 'widget.view.fields_view.model');
-            this.attr('t-att-name', "widget.view and widget.view.fields_view and widget.view.fields_view.model + '_' + widget.name")
-        </t>
-    </t>
-
-    <!-- Out commented because of an error in version 10 -->
-    <t t-extend="X2ManyControlPanel">
-	    <t t-jquery="div.o_x2m_control_panel">
-            this.attr('type_data_is', 'X2ManyControlPanel');
-            this.attr('t-att-data-bt-testing-model_name', 'widget.__parentedParent and widget.__parentedParent.view and widget.__parentedParent.view.model');
-            this.attr('t-att-data-bt-testing-name', 'widget.__parentedParent and widget.__parentedParent.dataset and widget.__parentedParent.dataset.child_name');
-            this.attr('t-att-data-bt-testing-submodel_name', 'widget.__parentedParent and widget.__parentedParent.dataset and widget.__parentedParent.dataset.model');
-            this.attr('t-att-name', "(widget.__parentedParent and widget.__parentedParent.view and widget.__parentedParent.view.model) + '_' + (widget.__parentedParent and widget.__parentedParent.dataset and widget.__parentedParent.dataset.child_name) + '_' + (widget.__parentedParent and widget.__parentedParent.dataset and widget.__parentedParent.dataset.model)")
-            this.attr('data-bt-testing-submodel_name', 'X2Many');
-            this.attr('type_data_is', 'X2ManyControlPanel');
-        </t>
-    </t>
-
-
-
-    <!-- adapted, but not tested: 9.0 EE -->
-    <t t-extend="FieldRadio">
-        <t t-jquery="input.o_form_radio">
-            this.attr('t-att-data-bt-testing-name', 'widget.name');
-            this.attr('t-att-data-bt-testing-model_name', 'widget.view.fields_view.model');
-            this.attr('t-att-name', "widget.view and widget.view.fields_view and widget.view.fields_view.model + '_' + widget.name")
-        </t>
-    </t>
-
-
-    <!-- adapted, but not tested: 9.0 EE
-    <t t-extend="ListView.row">
-        <t t-jquery="input[name='radiogroup']">
-            this.attr('t-att-data-bt-testing-name', 'widget.name');
-            this.attr('t-att-data-bt-testing-model_name', 'widget.view.fields_view.model');
-        </t>
-    </t>
-    -->
-
-    <t t-extend="WidgetButton">
-        <t t-jquery="button">
-            this.attr('t-att-data-bt-testing-model_name', 'widget and widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model');
-            this.attr('t-att-data-bt-testing-name', 'widget.node.attrs.name');
-            this.attr('t-att-name', "widget and widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model + '_' + widget.node.attrs.name")
-            this.attr('type_data_is', 'WidgetButton');
-        </t>
-    </t>
-
-    <t t-extend="SelectCreatePopup.search.buttons">
-        <t t-jquery="button.oe_selectcreatepopup-search-select">
-            this.attr('t-att-data-bt-testing-model_name', 'widget and widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model');
-            this.attr('data-bt-testing-name', 'oe_form_button_select');
-        </t>
-
-        <t t-jquery="button.oe_selectcreatepopup-search-create">
-            this.attr('t-att-data-bt-testing-model_name', 'widget and widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model');
-            this.attr('data-bt-testing-name', 'oe_form_button_create');
-        </t>
-
-        <t t-jquery="a.oe_form_button_cancel">
-            this.attr('t-att-data-bt-testing-model_name', 'widget and widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model');
-            this.attr('data-bt-testing-name', 'oe_form_button_cancel');
-        </t>
-    </t>
-
-    <t t-extend="AbstractFormPopup.buttons">
-        <t t-jquery="button.oe_abstractformpopup-form-save">
-            this.attr('data-bt-testing-name', 'oe_form_button_save');
-        </t>
-
-        <t t-jquery="button.oe_abstractformpopup-form-save">
-            this.attr('data-bt-testing-name', 'oe_form_button_save_and_close');
-        </t>
-
-        <t t-jquery="button.oe_abstractformpopup-form-save-new">
-            this.attr('data-bt-testing-name', 'oe_form_button_save_new');
-        </t>
-
-        <t t-jquery="a.oe_form_button_cancel">
-            this.attr('data-bt-testing-name', 'oe_form_button_cancel');
-        </t>
-    </t>
-
-    <table t-extend="ListView.row">
-	<t t-jquery=":parent">
-            this.attr('t-att-data-bt-testing-model_name', 'view.dataset and view.dataset.model');
-	</t>
-    </table>
-
-    <t t-extend="Sidebar">
-    	<t t-jquery="a">
-		    this.attr('t-att-data-bt-type', 'item and item.action and item.action.type');
-		    this.attr('t-att-data-bt-id', 'item and item.action and item.action.id');
-	    </t>
-    </t>
-
-    <!-- Code of Alex
-    	    this.attr('t-att-data-bt-type', 'name');
-		    this.attr('t-att-data-bt-id', 'widget.id');
-    -->
+  </t>
 
 </templates>
