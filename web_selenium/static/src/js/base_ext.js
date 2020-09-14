@@ -1,5 +1,5 @@
 odoo.define('web_selenium.base_ext', function(require){
-  "option strict";
+  "use strict";
 
   // tested: ok 11.0EE
   var Widget = require('web.Widget');
@@ -25,9 +25,9 @@ odoo.define('web_selenium.base_ext', function(require){
       this._super.apply(this, arguments);
       var widget = this;
       this.$el.find('option').each(function() {
-        $el = $(this);
+        var $el = $(this);
         $el.attr('data-type', widget.field && widget.field.type);
-        // When the field is selection, take the technical value so to stay language independent. 
+        // When the field is selection, take the technical value so to stay language independent.
         // If it is a many2one field, take the name of the field instead of the id.
         // It's better to be database independent than language independent
         $el.attr('data-bt-testing-value', widget.field && widget.field.type === 'many2one' ? $el.text() : $el.val());
@@ -83,13 +83,13 @@ odoo.define('web_selenium.base_ext', function(require){
     }
   });
 
-  // tested: ok 11.0EE
-  var ViewManager = require('web.ViewManager');
-  ViewManager.include({
-    start: function() {
-      var self = this;
-      return this._super.apply(this, arguments).then(this.addSeleniumData.bind(this));
-    }
-  });
+  // // tested: ok 11.0EE
+  // var ViewManager = require('web.ViewManager');
+  // ViewManager.include({
+  //   start: function() {
+  //     var self = this;
+  //     return this._super.apply(this, arguments).then(this.addSeleniumData.bind(this));
+  //   }
+  // });
 
 });
