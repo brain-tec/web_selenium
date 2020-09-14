@@ -18,7 +18,7 @@
   <!-- tested: ok 11.0 EE -->
   <t t-extend="ListView.buttons">
     <t t-jquery="button.o_list_button_add, button.o_list_button_save, button.o_list_button_discard">
-      this.attr('t-att-data-bt-testing-model_name', 'widget and widget.getParent and widget.getParent().dataset and widget.getParent().dataset.model');
+      this.attr('t-att-data-bt-testing-model_name', 'widget and widget.modelName');
     </t>
     <t t-jquery="button.o_list_button_add">
       this.attr('data-bt-testing-name', 'oe_list_add');
@@ -38,5 +38,29 @@
       this.attr('t-att-data-bt-id', 'item and item.action and item.action.id');
     </t>
   </t>
+
+  <!-- tested: ok 12.0 EE -->
+  <t t-extend="FormView.buttons">
+        <!-- tested: ok 12.0 EE -->
+        <t t-jquery="button.o_form_button_edit">
+            this.attr('t-att-data-bt-testing-model_name', 'widget and widget.modelName');
+	        this.attr('data-bt-testing-name', 'oe_form_button_edit');
+        </t>
+        <!-- tested: ok 12.0 EE -->
+        <t t-jquery="button.o_form_button_create">
+            this.attr('t-att-data-bt-testing-model_name', 'widget and widget.modelName');
+            this.attr('data-bt-testing-name', 'oe_form_button_create');
+        </t>
+        <!-- tested: ok 12.0 EE -->
+        <t t-jquery="button.o_form_button_save">
+            this.attr('t-att-data-bt-testing-model_name', 'widget and widget.modelName');
+            this.attr('data-bt-testing-name', 'oe_form_button_save');
+        </t>
+        <!-- tested: ok 12.0 EE -->
+        <t t-jquery="button.o_form_button_cancel">
+            this.attr('t-att-data-bt-testing-model_name', 'widget and widget.modelName');
+            this.attr('data-bt-testing-name', 'oe_form_button_cancel');
+        </t>
+    </t>
 
 </templates>
